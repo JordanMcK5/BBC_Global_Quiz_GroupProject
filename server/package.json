@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {"server:dev": "nodemon server.js",
-    "seeds":"mongo < db/seeds.js",
+  "scripts": {
+    "server:dev": "nodemon server.js",
+    "seeds": "mongo < db/seeds.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,7 +14,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^3.5.7",
-    "nodemon": "^2.0.14",
     "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
   }
 }
