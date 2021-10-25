@@ -1,12 +1,36 @@
 import React, { useState, useEffect } from 'react'
 import WorldMap, { CountryContext } from 'react-svg-worldmap';
 
-
 const ReactQuizContainer = () => {
 
     // state
     const [countries, setCountries] = useState([])
     const [selectedCountry, setSelectedCountry] = useState([])
+    const [animals, setAnimals] = useState([
+
+        { animal: 'the Beaver', iso: 'CA' },
+        { animal: 'the Snow Monkey', iso: 'JP' },
+        { animal: 'the Polar Bear', iso: 'GL' },
+        { animal: 'the Golden Eagle', iso: 'MX' },
+        { animal: 'the Tiger', iso: 'IN' },
+        { animal: 'the Kiwi', iso: 'NZ' },
+        { animal: 'the Brown Bear', iso: 'RU' },
+        { animal: 'the Bald Eagle', iso: 'US' },
+        { animal: 'the Giant Panda', iso: 'CN' },
+    ])
+
+    const [selectedAnimal, setSelectedAnimal] = useState({ animal: 'the Kangaroo', iso: 'AU' })
+    const [question, setQuestion] = useState(`Click the Country where the National Animal is ${selectedAnimal.animal}...`)
+    const [answer, setAnswer] = useState("")
+    const [correctCountries, setCorrectCountries] = useState([])
+    const [inCorrectCountries, setInCorrectCountries] = useState([])
+    const [quizEnded, setQuizEnded] = useState(false)
+    const [results, setResults] = useState([])
+    const [count, setCount] = useState(0)
+    const [button, setButton] = useState('')
+
+    
+    // fetch api
     const fetchAllCountries = () => {
         fetch('https://restcountries.com/v2/all')
             .then(response => response.json())
@@ -18,43 +42,24 @@ const ReactQuizContainer = () => {
 
     const countryItems = countries.map((country) => {
         const ios = country.alpha2Code
-        const area = country.area
         return { country: ios, value: "" }
     })
 
-    const [capitals, setCapitals] = useState([
-
-        { capital: 'the Beaver', iso: 'CA' },
-        { capital: 'the Snow Monkey', iso: 'JP' },
-        { capital: 'the Gallic Rooster', iso: 'FR' },
-        { capital: 'the Golden Eagle', iso: 'MX' },
-        { capital: 'the Gray Wolf', iso: 'TR' },
-        { capital: 'the Kiwi', iso: 'NZ' },
-        { capital: 'the Brown Bear', iso: 'RU' },
-        { capital: 'the Bald Eagle', iso: 'US' },
-    ])
-    const [selectedCapital, setSelectedCapital] = useState({ capital: 'the Kangaroo', iso: 'AU' })
-    const [correctCountries, setCorrectCountries] = useState([])
-    const [inCorrectCountries, setInCorrectCountries] = useState([])
-    const [answer, setAnswer] = useState("")
-    const [question, setQuestion] = useState(`Click the Country where the National Animal is ${selectedCapital.capital}...`)
-
     const setNewQuestion = () => {
-        let question = `Click the Country where the National Animal is ${selectedCapital.capital}...`
+        let question = `Click the Country where the National Animal is ${selectedAnimal.animal}...`
         setQuestion(question)
     }
     const onClick = () => {
-        // if ( count === 8 ) {
-        //     console.log("Results")
-        //     }
-        // else
         setNewQuestion()
         setAnswer("")
-    }
+        setButton("")
+     }
+    
     const newQuestion = () => {
-        let capital = capitals[Math.floor(Math.random() * capitals.length)];
-        setSelectedCapital(capital)
+        let animal = animals[Math.floor(Math.random() * animals.length)];
+        setSelectedAnimal(animal)
     }
+    
 
     // styling
     const stylingFunction = ({
@@ -80,25 +85,49 @@ const ReactQuizContainer = () => {
 
     //  clicking on country to answer
     const clickAction = (country) => {
-        console.log(country.countryCode)
-        console.log(selectedCapital.iso)
-        if (country.countryCode === selectedCapital.iso) {
+        if (count === 9) {
+            endQuiz()
+        }else{
+        if (country.countryCode === selectedAnimal.iso) {
 
-            for (var i = 0; i < capitals.length; i++) {
-                if (capitals[i] === selectedCapital) {
-                    capitals.splice(i, 1);
+            for (var i = 0; i < animals.length; i++) {
+                if (animals[i] === selectedAnimal) {
+                    animals.splice(i, 1);
                 }
             }
-            setCorrectCountries(country)
+            setCount(count + 1)
+            setCorrectCountries(country.countryName)
             newQuestion()
-            // console.log("Correct")
-            setAnswer(`Woohoo! ${country.countryName} is Correct`)
+            setButton(`⮕`)
+            setAnswer(`Woohoo! ${country.countryName} is Correct ${button}`)
+
         } else {
-            // console.log("Try Again")
-            setAnswer(`Nope. Sorry not ${country.countryName}!`)
-            setInCorrectCountries(country)
+            setInCorrectCountries(country.countryName)
+            setAnswer(`Nope. Sorry not ${country.countryName} Try Again!`)
+        }
+    }}
+
+    console.log(correctCountries)
+    // console.log(se)
+
+
+    // trying to end quiz and post results
+    // 
+    const endQuiz = () => {
+        if (inCorrectCountries === []){
+            console.log("You got the National Animals of these countries first try:", correctCountries)
+        }else if (correctCountries === []){
+            console.log("Need little more revision on these countries...", inCorrectCountries)
+        }else {
+            console.log("You got the National Animals of these countries first try:", correctCountries)
+            console.log("Need little more revision on these countries...", inCorrectCountries)
         }
     }
+
+    // const postResults = () => {
+
+    // }
+
 
     // rendered on page
     return (
@@ -113,8 +142,8 @@ const ReactQuizContainer = () => {
                 richInteraction
                 styleFunction={stylingFunction}
             />
-            <h2>{question} <button onClick={onClick}>&rarr;</button></h2>
-            <h2>{answer}</h2>
+            <h2>{question}</h2>
+            <h1>{answer} <span id="aButtonFeel" onClick={onClick}>{button}</span></h1>
         </div>
     )
 }
