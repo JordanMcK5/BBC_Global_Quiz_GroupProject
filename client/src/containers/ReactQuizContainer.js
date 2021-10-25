@@ -39,23 +39,17 @@ const ReactQuizContainer = () => {
     const [answer, setAnswer] = useState("")
     const [question, setQuestion] = useState(`Click the Country where the National Animal is ${selectedCapital.capital}...`)
 
-    // const resultsPage = () => {
-    //     if ( capitals === [] ) {
-
-    //     }
-    // }
-
     const setNewQuestion = () => {
         let question = `Click the Country where the National Animal is ${selectedCapital.capital}...`
         setQuestion(question)
     }
     const onClick = () => {
+        // if ( count === 8 ) {
+        //     console.log("Results")
+        //     }
+        // else
         setNewQuestion()
         setAnswer("")
-        if ( capitals === [] ) {
-            console.log("working")
-        } 
-
     }
     const newQuestion = () => {
         let capital = capitals[Math.floor(Math.random() * capitals.length)];
@@ -97,31 +91,14 @@ const ReactQuizContainer = () => {
             }
             setCorrectCountries(country)
             newQuestion()
-            console.log("Correct")
+            // console.log("Correct")
             setAnswer(`Woohoo! ${country.countryName} is Correct`)
         } else {
-            console.log("Try Again")
-            newQuestion()
+            // console.log("Try Again")
             setAnswer(`Nope. Sorry not ${country.countryName}!`)
             setInCorrectCountries(country)
         }
     }
-
-    console.log(correctCountries)
-    console.log(inCorrectCountries)
-
-    // label
-    // const createTextLabels = (width: number) => {
-    //     const labels: ({label: string} & ComponentProps<'text'>)[] = [
-    //       {label: 'double-click', x: 0.083 * width, y: 0.48 * width},
-    //     ];
-    //     if (width < 550) {
-    //       labels.forEach((label) => {
-    //         label.style = {...label.style, fontSize: '70%'};
-    //       });
-    //     }
-    //     return labels;
-    //   };
 
     // rendered on page
     return (
@@ -135,7 +112,6 @@ const ReactQuizContainer = () => {
                 size='responsive'
                 richInteraction
                 styleFunction={stylingFunction}
-                // textLabelFunction={createTextLabels}
             />
             <h2>{question} <button onClick={onClick}>&rarr;</button></h2>
             <h2>{answer}</h2>

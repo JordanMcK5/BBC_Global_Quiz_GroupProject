@@ -8,7 +8,7 @@ import ReactQuizContainer from './containers/ReactQuizContainer';
 function App() {
   return (
     <div> 
-      <WorldContainer />
+      
 
       <Router>
         <>
@@ -16,8 +16,8 @@ function App() {
         <Switch> 
         <Route path="/quiz/national-animals" component={ReactQuizContainer} /> 
         <Route path="/quiz/" component={QuizContainer} />
+        <WorldContainer />
         
-
         </Switch>
       </>
       </Router>

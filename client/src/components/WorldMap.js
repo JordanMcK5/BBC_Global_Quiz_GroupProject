@@ -1,18 +1,18 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
-const WorldMap = ({countriesForMap}) => {
+const WorldMap = ({countries}) => {
 
-    const countryMarkers = countriesForMap.map((country, index) => {
-
+    const countryMarkers = countries.map((country, index) => {
+        if (country.latlng){
         return (
             <Marker key={index} position={[country.latlng[0], country.latlng[1]]}>
                 <Popup>
-                    <h3>{country.name.common}</h3>
-                    <a href={`country/?detail=${country.name.common}`}>Check website</a>
+                    <h3>{country.name}</h3>
+                    <a href={`country/?detail=${country.name}`}>Check website</a>
                 </Popup>
             </Marker>
-        )
+        )}
     })
 
     return(

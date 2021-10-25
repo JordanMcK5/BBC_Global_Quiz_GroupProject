@@ -36,11 +36,8 @@ const WorldContainer = () => {
 
     return (
         <Router>
-            <h2>Hello WorldQuiz!</h2>
-            <Link to="/">Home</Link><br></br>
-            <Link to="/map">View map</Link><br></br>
             <CountrySelector countries={countries} onCountrySelected={onCountrySelected} />
-            <Route path ="/map" component={()=>(<WorldMap countriesForMap={countriesForMap}/>)} />
+            <Route path ="/map" component={()=>(<WorldMap countries={countries}/>)} />
             {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null}
             <Route path="/country" component={() => (<Country countries={countries} />)} />
             
