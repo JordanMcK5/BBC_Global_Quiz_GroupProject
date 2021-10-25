@@ -1,75 +1,67 @@
 use world;
 db.dropDatabase();
-db.countries.insertMany([
+db["flags-quiz"].insertMany([
     {
-    name:"France",
-    capital:"Paris",
-    language:"French"
+        name: "Ted",
+        results: [
+            { round: 1, winner: true},
+            { round: 2, winner: true},
+            { round: 3, winner: true},
+            { round: 4, winner: false},
+            { round: 5, winner: true},
+            { round: 6, winner: true},
+            { round: 7, winner: false},
+            { round: 8, winner: true},
+            { round: 9, winner: true},
+            { round: 10, winner: true}
+        ]
+    },
+    {
+        name: "Craig",
+        results: [
+            { round: 1, winner: true},
+            { round: 2, winner: true},
+            { round: 3, winner: true},
+            { round: 4, winner: true},
+            { round: 5, winner: true},
+            { round: 6, winner: true},
+            { round: 7, winner: true},
+            { round: 8, winner: true},
+            { round: 9, winner: true},
+            { round: 10, winner: true}
+        ]
     }
+]);
 
-    // {
-    //     name: "Ted",
-    //     results: [
-    //         {
-    //             0: {
-    //                 round: 1,
-    //                 winner: true
-    //             }
-    //         },
-    //         {
-    //             1: {
-    //                 round: 2,
-    //                 winner: true
-    //             }
-    //         },
-    //         {
-    //             2: {
-    //                 round: 3,
-    //                 winner: true
-    //             }
-    //         },
-    //         {
-    //             3: {
-    //                 round: 4,
-    //                 winner: true
-    //             }
-    //         },
-    //         {
-    //             4: {
-    //                 round: 5,
-    //                 winner: false
-    //             }
-    //         },
-    //         {
-    //             5: {
-    //                 round: 6,
-    //                 winner: true
-    //             }
-    //         },
-    //         {
-    //             6: {
-    //                 round: 7,
-    //                 winner: true
-    //             }
-    //         },
-    //         {
-    //             7: {
-    //                 round: 8,
-    //                 winner: true
-    //             }
-    //         },
-    //         {
-    //             8: {
-    //                 round: 9,
-    //                 winner: false
-    //             }
-    //         },
-    //         {
-    //             9: {
-    //                 round: 10,
-    //                 winner: true
-    //             }
-    //         }
-    //     ]
-    // }
+db["capitals-quiz"].insertMany([
+    {
+        name: "Steve",
+        results: [
+            { round: 1, winner: true},
+            { round: 2, winner: false},
+            { round: 3, winner: true},
+            { round: 4, winner: false},
+            { round: 5, winner: true},
+            { round: 6, winner: true},
+            { round: 7, winner: false},
+            { round: 8, winner: true},
+            { round: 9, winner: false},
+            { round: 10, winner: true}
+        ]
+    },
+    {
+        name: "Craig",
+        results: [
+            { round: 1, winner: true},
+            { round: 2, winner: true},
+            { round: 3, winner: true},
+            { round: 4, winner: true},
+            { round: 5, winner: true},
+            { round: 6, winner: true},
+            { round: 7, winner: true},
+            { round: 8, winner: true},
+            { round: 9, winner: true},
+            { round: 10, winner: true}
+        ]
+    }
 ]);
