@@ -17,10 +17,6 @@ const Scores = ({getResults}) => {
         })
       },[]);
 
-      {/* <button 
-      // onClick={handleDelete}
-      > Delete Score</button> */}
-
       const headerRow = scores[0]?.results.map((result) => {
           return <th>Round {result.round}</th>
       })
@@ -34,6 +30,10 @@ const Scores = ({getResults}) => {
               <tr>{playerCell}{resultCells}</tr>
           )
       })
+
+      {/* <button 
+      // onClick={handleDelete}
+      > Delete Score</button> */}
 
     return (
         <div>
