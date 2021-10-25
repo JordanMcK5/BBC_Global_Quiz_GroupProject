@@ -3,6 +3,7 @@ import WorldContainer from './containers/WorldContainer';
 import QuizContainer from './containers/QuizContainer';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ReactQuizContainer from './containers/ReactQuizContainer';
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
         <>
         <NavBar />
         <Switch> 
-      
-        <Route exact path="/quiz/" component={QuizContainer} />
+        <Route path="/quiz/national-animals" component={ReactQuizContainer} /> 
+        <Route path="/quiz/" component={QuizContainer} />
+        
 
         </Switch>
       </>
