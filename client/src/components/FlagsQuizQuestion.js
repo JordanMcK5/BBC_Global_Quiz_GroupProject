@@ -8,7 +8,7 @@ const FlagsQuizQuestion = ({currentCountry, answers, receiveAnswer }) => {
 
     const quizAnswers = answers.map((answer) => {
         return (
-            <img key={answer.abbreviation} src={answer.flag} onClick={() => { receiveAnswer(answer.abbreviation) }} />
+            <img key={answer.abbreviation} alt="flag-img" src={answer.flag} onClick={() => { receiveAnswer(answer.abbreviation) }} />
         )
     })
 

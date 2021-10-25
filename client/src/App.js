@@ -1,6 +1,6 @@
 import './App.css';
 import WorldContainer from './containers/WorldContainer';
-import QuizContainer from './container/QuizContainer';
+import QuizContainer from './containers/QuizContainer';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 

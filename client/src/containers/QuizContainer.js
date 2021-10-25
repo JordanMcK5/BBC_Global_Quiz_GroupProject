@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import FlagsQuizQuestion from "../components/FlagsQuizQuestion"
 import CapitalsQuizQuestion from "../components/CapitalsQuizQuestion"
 import Results from "../components/Results"
-import { postResults as postResultsFlags } from "../service/FlagsQuizService";
-import { postResults as postResultsCapitals } from "../service/CapitalsQuizService";
+import { postResults as postResultsFlags } from "../services/FlagsQuizService";
+import { postResults as postResultsCapitals } from "../services/CapitalsQuizService";
 
 const maxNumberOfRounds = 10
 
