@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 
 const Results = ({ results, postResults }) => {
-
+    const history = useHistory()
     const [name, setName] = useState(null)
 
     const resultEntries = results.map((result) => {
@@ -28,6 +29,7 @@ const Results = ({ results, postResults }) => {
         }
         
         postResults(newResult)
+        .then(() => history.push(`${history.location.pathname}/scores`))
     }
     
 
