@@ -19,7 +19,7 @@ const Country = ({ countries }) => {
 
     const countryFind = function (countryList, fixedName) {
         for (var country of countryList) {
-            if (country.name === fixedName) {
+            if (country.name === fixedName) {       
                 return country
             }
         }
@@ -27,11 +27,11 @@ const Country = ({ countries }) => {
 
     const countryDetails = countryFind(countries, countryFinal)
 
-    const languagesSpoken = countryDetails.languages.map((language) => {
+    const languagesSpoken = countryDetails?.languages.map((language) => {
         return language.name
     }).join(", ")
 
-    const currencies = countryDetails.currencies.map((currency) => {
+    const currencies = countryDetails?.currencies.map((currency) => {
         return currency.name
     }).join(", ")
 

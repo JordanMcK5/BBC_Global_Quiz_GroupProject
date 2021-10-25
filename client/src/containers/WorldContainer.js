@@ -43,6 +43,7 @@ const WorldContainer = () => {
             <Route path ="/map" component={()=>(<WorldMap countriesForMap={countriesForMap}/>)} />
             {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null}
             <Route path="/country" component={() => (<Country countries={countries} />)} />
+            
         </Router>
 
 
