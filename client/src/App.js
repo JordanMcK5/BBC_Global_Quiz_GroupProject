@@ -4,6 +4,7 @@ import QuizContainer from './containers/QuizContainer';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ReactQuizContainer from './containers/ReactQuizContainer';
+import NationalAnimalsService from './services/NationalAnimalQuizService'
 
 function App() {
   return (
@@ -14,10 +15,10 @@ function App() {
         <>
         <NavBar />
         <Switch> 
-        <Route path="/quiz/national-animals" component={ReactQuizContainer} /> 
+        <Route exact path="/quiz/national-animals/scores" render={() => <Scores getResults={getResultsNationalAnimals}/>} />
+        <Route exact path="/quiz/national-animals" render={() => <ReactQuizContainer postResults={postResultsNationalAnimals}/>} />
         <Route path="/quiz/" component={QuizContainer} />
         <WorldContainer />
-        
         </Switch>
       </>
       </Router>

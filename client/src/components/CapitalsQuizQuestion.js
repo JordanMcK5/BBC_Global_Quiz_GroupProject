@@ -12,7 +12,6 @@ const CapitalsQuizQuestion = ({currentCountry, answers, receiveAnswer }) => {
         )
     })
 
-
     return (
         <div>
             <p>What is the capital of {currentCountry}?</p>
