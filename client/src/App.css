@@ -31,6 +31,14 @@ background-color:#ffdf59
 ;
 }
 
+body {
+  margin-top: 10px;
+  background-image: url('images/background.png');
+  height: 100%;
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+  color: azure;}
+
 /* .App {
   margin-top: 10vh;
   text-align: center;
