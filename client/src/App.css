@@ -1,0 +1,41 @@
+.leaflet-container{
+  width: 90vw;
+  height: 83vh;
+}
+
+ul {
+        
+  list-style-type: none;
+  margin: 0px;
+  margin-top: -10px;
+  padding: 0;
+  overflow: hidden;
+  background-color:#012231
+}
+
+li{
+  float: left;  
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center; 
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+}
+
+li a:hover {
+background-color:#ffdf59
+;
+}
+
+/* .App {
+  margin-top: 10vh;
+  text-align: center;
+  border: black 2px solid;
+  padding: 2%;
+  margin-left: 12vw;
+  margin-right: 12vw;
+} */
