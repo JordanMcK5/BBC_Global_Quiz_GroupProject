@@ -15,7 +15,16 @@ const NavBar = () => {
                 <Link to="/quiz/national-animals">National Animals Quiz</Link>
             </li>
             <li>
-                <Link to="/quiz">Flags and Capitals Quizzes</Link>
+                <Link to="/quiz/capitals">Capitals Quiz</Link>
+            </li>
+            <li>
+                <Link to="/quiz/flags">Flags Quiz</Link>
+            </li>
+            <li>
+                <Link to="/quiz/flags/scores">Flags Scores</Link>
+            </li>
+            <li>
+                <Link to="/quiz/capitals/scores">Capitals Scores</Link>
             </li>
         </ul>
     );
