@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import WorldMap, { CountryContext } from 'react-svg-worldmap';
 import Results from '../components/Results';
 
-const ReactQuizContainer = () => {
+const ReactQuizContainer = ({postResults}) => {
 
     const [countries, setCountries] = useState([])
     const [animals, setAnimals] = useState([
@@ -74,7 +74,7 @@ const ReactQuizContainer = () => {
 
     const onClick = () => {
         if (round === 11) {
-            postResults()
+            endQuiz()
         } else {
             setNewQuestion()
             setAnswer("")
@@ -105,7 +105,7 @@ const ReactQuizContainer = () => {
         }
     }
 
-    const postResults = () => {
+    const endQuiz = () => {
         setViewResults(`You Got ${wins}/10!`)
         setQuizEnded(true)
     }
@@ -114,12 +114,11 @@ const ReactQuizContainer = () => {
 
     const endOfQuiz = () => {
         if (quizEnded){
-           return <Results results={results} postResults={postResultsNationalAnimals}/> 
+           return <Results results={results} postResults={postResults} /> 
     }}
 
       return (
             <div className="App">
-            {endOfQuiz()}
             <h1>National Animals Quiz</h1>
             <WorldMap
                 className="Map"
@@ -133,6 +132,7 @@ const ReactQuizContainer = () => {
             <h2>{question}</h2>
             <h2>{answer} <span id="aButtonFeel" onClick={onClick}>{button}</span></h2>
             <h2>{viewResults}</h2>
+            {endOfQuiz()}
             </div>
      )
 }

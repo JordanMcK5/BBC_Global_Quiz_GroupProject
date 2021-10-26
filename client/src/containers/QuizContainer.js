@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react"
-import FlagsQuizQuestion from "../components/FlagsQuizQuestion"
-import CapitalsQuizQuestion from "../components/CapitalsQuizQuestion"
 import Results from "../components/Results"
-import { postResults as postResultsFlags } from "../services/FlagsQuizService";
-import { postResults as postResultsCapitals } from "../services/CapitalsQuizService";
 
 const maxNumberOfRounds = 10
 
-const QuizQuestionContainer = () => {
+const QuizQuestionContainer = ({QuestionComponent, postResults}) => {
     const [countries, setCountries] = useState([])
     
     const [round, setRound] = useState(1)
@@ -15,10 +11,6 @@ const QuizQuestionContainer = () => {
 
     const [results, setResults] = useState([])
     const [quizEnded, setQuizEnded] = useState(false)
-
-    const [showFlags, setShowFlags] = useState(false)
-    const [showCapitals, setShowCapitals] = useState(false)
-
 
     const fetchCountryData = () => {
         fetch("https://restcountries.com/v3.1/all")
@@ -83,11 +75,9 @@ const QuizQuestionContainer = () => {
         const newResults = [...results]
         if (answerAbbreviation === countries[countryIndex].abbreviation) {
             newResults.push({ round, winner: true})
-            console.log("Yaldi")
         }
         else {
             newResults.push({ round, winner: false})
-            console.log("Fuck")
         }
         setResults(newResults)
         setRound(round + 1)
@@ -98,35 +88,17 @@ const QuizQuestionContainer = () => {
         setQuizEnded(true)
     }
 
-    
     const renderContent = () => {
         if (quizEnded) {
-            if (showCapitals) return <Results results={results} postResults={postResultsCapitals}/> 
-             else if (showFlags) return <Results results={results} postResults={postResultsFlags}/> 
+            return <Results results={results} postResults={postResults}/> 
         }
-        else if (showFlags) {
-            return <FlagsQuizQuestion currentCountry={countries[countryIndex]?.name} answers={getAnswers()} receiveAnswer={receiveAnswer} /> 
+        else {
+            return <QuestionComponent currentCountry={countries[countryIndex]?.name} answers={getAnswers()} receiveAnswer={receiveAnswer} /> 
         }
-        else if (showCapitals) {
-            return <CapitalsQuizQuestion currentCountry={countries[countryIndex]?.name} answers={getAnswers()} receiveAnswer={receiveAnswer} /> 
-        }
-    }
-
-   
-    const handleShowFlags = () => {
-        setShowFlags(true)
-        setShowCapitals(false)
-    }
-
-    const handleShowCapitals = () => {
-        setShowCapitals(true)
-        setShowFlags(false)
     }
 
     return (
         <div>
-            <button onClick={handleShowFlags}> Flags Quiz</button>
-            <button onClick={handleShowCapitals}> Capitals Quiz</button>
             {renderContent()}
         </div>
     )
