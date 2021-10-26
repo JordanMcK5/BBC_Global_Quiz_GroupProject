@@ -104,7 +104,7 @@ const ReactQuizContainer = () => {
     return (
         <div className="App">
         <h1>National Animals Quiz</h1>
-        <img className="main_logo" height="250" src={`${process.env.PUBLIC_URL}/animals.png`}  />
+        <img className="animal_image" height="250" src={`${process.env.PUBLIC_URL}/animals.png`}  />
 
             <WorldMap
                 className="Map"

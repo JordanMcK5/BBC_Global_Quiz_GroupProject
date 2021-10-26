@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
+        <div>
+
         <ul>
             <li>
                 <Link to="/">Home</Link>
@@ -26,7 +28,9 @@ const NavBar = () => {
             <li>
                 <Link to="/quiz/capitals/scores">Capitals Scores</Link>
             </li>
+            {/* <img className="bbc_logo" height="30" src={`${process.env.PUBLIC_URL}/bbc.jpeg`}  /> */}
         </ul>
+        </div>
     );
 };
 

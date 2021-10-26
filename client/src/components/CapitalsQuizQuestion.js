@@ -16,8 +16,8 @@ const CapitalsQuizQuestion = ({currentCountry, answers, receiveAnswer }) => {
     return (
         <div>
         <img className="main_logo" height="250" src={`${process.env.PUBLIC_URL}/quiz.png`}  />
-            <p>What is the capital of {currentCountry}?</p>
-            <div id="answers">
+            <p className="capital1">What is the capital of {currentCountry}?</p>
+            <div className="capital2" id="answers">
                 {quizAnswers}
             </div>
         </div>

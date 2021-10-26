@@ -1,6 +1,10 @@
 .leaflet-container{
-  width: 90vw;
-  height: 83vh;
+  width: 800px;
+  height: 600px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: #ffdf59;
 }
 
 ul {
@@ -73,13 +77,28 @@ font-size: 20px;
 }
 
 .flag-quiz-images{
-  height: 20px;
-  width: 80px;
+  height: 200px;
+  width: 300px;
+  padding-left: 30px;
 }
 
-.leaflet-control-container{
-  border: #ffdf59;
+.capital1{
+  color: #ffdf59;
+  font-size: x-large;
+  font-weight: bolder;
 }
+.capital2{
+  font-size: x-large;
+  background-color: white;
+  color:#012231;
+  margin-left: 500px;
+  margin-right: 500px;
+  display: block;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.capital2:hover {opacity: 2}
 /* .App {
   margin-top: 10vh;
   text-align: center;
