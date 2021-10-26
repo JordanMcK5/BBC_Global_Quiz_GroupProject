@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import WorldMap from '../components/WorldMap'
 import CountrySelector from '../components/CountrySelector'
 import CountryDetail from '../components/CountryDetail'
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Route } from "react-router-dom";
 import Country from '../components/Country'
 
 const WorldContainer = () => {
