@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 const Scores = ({getResults}) => {
 
     // const handleDelete = () => { 
-    //     deleteResult(booking._id).then(() => {
-    //         removeBooking(booking._id)
+    //     deleteResult(result._id).then(() => {
+    //         removeScore(result._id)
     //     })
     // }
 
@@ -15,7 +15,7 @@ const Scores = ({getResults}) => {
         .then((data)=>{
           setScores(data)
         })
-      },[]);
+      },[getResults]);
 
       const headerRow = scores[0]?.results.map((result) => {
           return <th>Round {result.round}</th>
