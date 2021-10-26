@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import WorldMap from '../components/WorldMap'
 import Country from '../components/Country'
 import { Route } from "react-router-dom";
-import countries from ''
-import WorldService from '../services/WorldService';
 
 const MapContainer = () => {
 
@@ -18,12 +16,12 @@ const MapContainer = () => {
     useEffect(() => {
         fetchAllCountries()
     }, [])
-    
+
     return (
-        <>
+        <div>
             <Route exact path="/map" component={() => (<WorldMap countries={countries} />)} />
             <Route exact path="/country" component={() => (<Country countries={countries} />)} />
-        </>
+        </div>
     )
 }
 

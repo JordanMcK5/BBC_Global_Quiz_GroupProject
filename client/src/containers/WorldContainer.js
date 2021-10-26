@@ -23,12 +23,11 @@ const WorldContainer = () => {
     }
 
     return (
-        <>
+        <div>
             <CountrySelector countries={countries} onCountrySelected={onCountrySelected} />
-            
             {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null}
             
-        </>
+        </div>
 
 
     )

@@ -16,26 +16,28 @@ import CapitalsQuizQuestion from "./components/CapitalsQuizQuestion"
 import ErrorPage from "./components/ErrorPage"
 import { deleteResult as deleteResultFlags } from "./services/FlagsQuizService"
 import { deleteResult as deleteResultCapitals } from "./services/CapitalsQuizService"
+import MapContainer from './containers/MapContainer';
 
 
 function App() {
   return (
-    <div> 
+    <div>
 
       <Router>
         <>
-        <NavBar />
-        <Switch> 
-        <Route exact path="/quiz/national-animals/scores" render={() => <Scores getResults={getResultsNationalAnimals}/>} />
-        <Route exact path="/quiz/national-animals" render={() => <ReactQuizContainer postResults={postResultsNationalAnimals}/>} />
-        <Route exact path="/quiz/capitals/scores" render={() => <Scores key="capitals-scores" getResults={getResultsCapitals} deleteResult={deleteResultCapitals}/>} />
-        <Route exact path="/quiz/capitals" render={() => <QuizContainer key={Math.random()} postResults={postResultsCapitals} QuestionComponent={CapitalsQuizQuestion} />} />
-        <Route exact path="/quiz/flags/scores" render={() => <Scores key="flags-scores" getResults={getResultsFlags} deleteResult={deleteResultFlags} />}/>
-        <Route exact path="/quiz/flags" render={() => <QuizContainer key={Math.random()} postResults={postResultsFlags} QuestionComponent={FlagsQuizQuestion} />} />
-        <WorldContainer />
-        <Route component={ErrorPage}/>
-        </Switch>
-      </>
+          <NavBar />
+          <Switch>
+            <Route exact path="/quiz/national-animals/scores" render={() => <Scores getResults={getResultsNationalAnimals} />} />
+            <Route exact path="/quiz/national-animals" render={() => <ReactQuizContainer postResults={postResultsNationalAnimals} />} />
+            <Route exact path="/quiz/capitals/scores" render={() => <Scores key="capitals-scores" getResults={getResultsCapitals} deleteResult={deleteResultCapitals} />} />
+            <Route exact path="/quiz/capitals" render={() => <QuizContainer key={Math.random()} postResults={postResultsCapitals} QuestionComponent={CapitalsQuizQuestion} />} />
+            <Route exact path="/quiz/flags/scores" render={() => <Scores key="flags-scores" getResults={getResultsFlags} deleteResult={deleteResultFlags} />} />
+            <Route exact path="/quiz/flags" render={() => <QuizContainer key={Math.random()} postResults={postResultsFlags} QuestionComponent={FlagsQuizQuestion} />} />
+            <Route exact path="/" render={() => <WorldContainer />} />
+            <MapContainer />
+            <Route component={ErrorPage} />
+          </Switch>
+        </>
       </Router>
     </div>
   );
