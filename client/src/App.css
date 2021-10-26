@@ -137,14 +137,16 @@ font-size: 20px;
   justify-content: space-between; */
 }
 
-.result-won {
-  color: #A0D13D;
+.results-outcome {
   text-align: left
 }
 
-.result-lost {
+.won {
+  color: #A0D13D;
+}
+
+.lost {
   color: #d1603d;
-  text-align: left
 }
 
 .results-round {
@@ -169,4 +171,14 @@ font-size: 20px;
 
 #name-form > * {
   margin: 5px 0;
+}
+
+#scores-table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+#scores-table td {
+  padding: 0 10px;
 }

@@ -13,7 +13,7 @@ const Results = ({ results, postResults }) => {
         else {
             resultString = "Lost"
         }
-        return <tr><td class="results-round">Round {result.round}:</td><td class={result.winner ? "result-won" : "result-lost"}>{resultString}</td></tr>
+        return <tr><td class="results-round">Round {result.round}:</td><td class={result.winner ? "results-outcome won" : "results-outcome lost"}>{resultString}</td></tr>
     })
 
     const onChange = (event) => {
