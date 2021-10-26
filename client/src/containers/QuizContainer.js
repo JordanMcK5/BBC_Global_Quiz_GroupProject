@@ -75,11 +75,9 @@ const QuizQuestionContainer = ({QuestionComponent, postResults}) => {
         const newResults = [...results]
         if (answerAbbreviation === countries[countryIndex].abbreviation) {
             newResults.push({ round, winner: true})
-            console.log("Yaldi")
         }
         else {
             newResults.push({ round, winner: false})
-            console.log("Fuck")
         }
         setResults(newResults)
         setRound(round + 1)
