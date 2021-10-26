@@ -26,21 +26,22 @@ const Scores = ({getResults, deleteResult}) => {
         )
       })
 
-    // const handleDelete = () => { 
-    //     deleteResult(scores.results).then(() => {
-    //         removeScore(scores.results)
-    //     })
-    // }
+      const removeScore = (id) => {
+          console.log("id", id);
+          const temp = scores.map(s => s)
+          const indexToDel = temp.map(s => s._id).indexOf(id);
+          console.log(indexToDel);
+  
+          temp.splice(indexToDel, 1)
+          setScores(temp)
+      }
 
+    const handleDelete = () => { 
+        deleteResult(scores.results).then(() => {
+            removeScore(scores.results)
+        })
+    }
     
-    // const removeScore = (id) => {
-    //     const temp = scores.map(s => s)
-    //     const indexToDel = temp.map(s => s.results).indexOf(id);
-    //     setScores(temp)
-    // }
-    // <button onClick={handleDelete}> Delete Score</button> 
-
-
     return (
         <div>
             <table> 
@@ -50,7 +51,7 @@ const Scores = ({getResults, deleteResult}) => {
                     
                 </tr>
                 {resultRows}
-                
+                <button onClick={handleDelete}> Delete Score</button> 
             </table>
         </div>
     )
