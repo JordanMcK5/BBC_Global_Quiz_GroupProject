@@ -12,6 +12,8 @@ const QuizQuestionContainer = ({QuestionComponent, postResults}) => {
     const [results, setResults] = useState([])
     const [quizEnded, setQuizEnded] = useState(false)
 
+    const [answers, setAnswers] = useState([])
+
     const fetchCountryData = () => {
         fetch("https://restcountries.com/v3.1/all")
         .then(res => res.json())
@@ -47,15 +49,7 @@ const QuizQuestionContainer = ({QuestionComponent, postResults}) => {
         }
     }, [round])
 
-    const getRandomCountryIndex = () => {
-        return Math.floor(Math.random() * (countries.length - 0) + 0)
-    }
-
-    if (!countryIndex) {
-        return null
-    }
-
-    const getAnswers = () => {
+    useEffect(() => {
         const answers = []
         if (countries.length > 0) {
             answers.push(countries[countryIndex])
@@ -67,9 +61,17 @@ const QuizQuestionContainer = ({QuestionComponent, postResults}) => {
                 }
             }
         }
+        setAnswers(answers.sort(() => Math.random() - 0.5))
+    }, [countryIndex])
 
-        return answers.sort(() => Math.random() - 0.5)
+    const getRandomCountryIndex = () => {
+        return Math.floor(Math.random() * (countries.length - 0) + 0)
     }
+
+    if (!countryIndex) {
+        return null
+    }
+
 
     const receiveAnswer = (answerAbbreviation) => {
         const newResults = [...results]
@@ -84,7 +86,6 @@ const QuizQuestionContainer = ({QuestionComponent, postResults}) => {
         setCountryIndex(countryIndex + 1)
     }
 
-    console.log(results);
     const endQuiz = () => {
         setQuizEnded(true)
     }
@@ -94,7 +95,7 @@ const QuizQuestionContainer = ({QuestionComponent, postResults}) => {
             return <Results results={results} postResults={postResults}/> 
         }
         else {
-            return <QuestionComponent currentCountry={countries[countryIndex]?.name} answers={getAnswers()} receiveAnswer={receiveAnswer} /> 
+            return <QuestionComponent currentCountry={countries[countryIndex]?.name} answers={answers} receiveAnswer={receiveAnswer} /> 
         }
     }
 
