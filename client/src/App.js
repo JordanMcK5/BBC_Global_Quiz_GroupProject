@@ -7,6 +7,7 @@ import ReactQuizContainer from './containers/ReactQuizContainer';
 import Scores from './components/Scores';
 import FlagsQuizQuestion from "./components/FlagsQuizQuestion"
 import CapitalsQuizQuestion from "./components/CapitalsQuizQuestion"
+import ErrorPage from "./components/ErrorPage"
 import { postResults as postResultsFlags } from "./services/FlagsQuizService";
 import { postResults as postResultsCapitals } from "./services/CapitalsQuizService";
 import { getResults as getResultsCapitals } from "./services/CapitalsQuizService";
@@ -30,7 +31,7 @@ function App() {
         <Route exact path="/quiz/national-animals" component={ReactQuizContainer} /> 
         <Route exact path="/quiz/" component={QuizContainer} />
         <WorldContainer />
-        
+        <Route component={ErrorPage}/>
         </Switch>
       </>
       </Router>
