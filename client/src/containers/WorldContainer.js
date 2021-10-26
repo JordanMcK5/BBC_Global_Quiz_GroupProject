@@ -35,13 +35,13 @@ const WorldContainer = () => {
     }
 
     return (
-        <Router>
+        <>
             <CountrySelector countries={countries} onCountrySelected={onCountrySelected} />
             <Route path ="/map" component={()=>(<WorldMap countries={countries}/>)} />
             {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null}
             <Route path="/country" component={() => (<Country countries={countries} />)} />
             
-        </Router>
+        </>
 
 
     )
