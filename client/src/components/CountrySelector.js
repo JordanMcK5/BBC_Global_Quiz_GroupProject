@@ -11,13 +11,15 @@ const CountrySelector = ({countries, onCountrySelected}) => {
     })
 
     return(
-        <div>
+        <>
         <img className="main_logo" height="500" src={`${process.env.PUBLIC_URL}/logo.png`}  />
+       <div>
         <select className="country_homepage_dropdown" defaultValue="" onChange={handleChange}>
             <option value="" selected>Choose a Country</option>
             {countryOptions}
         </select>
         </div>
+        </>
     )
 }
 
