@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Scores = ({getResults}) => {
-
-    // const handleDelete = () => { 
-    //     deleteResult(result._id).then(() => {
-    //         removeScore(result._id)
-    //     })
-    // }
+const Scores = ({getResults, deleteResult}) => {
 
     const [scores, setScores] = useState([])
 
@@ -16,24 +10,37 @@ const Scores = ({getResults}) => {
           setScores(data)
         })
       },[getResults]);
+ 
 
-      const headerRow = scores[0]?.results.map((result) => {
-          return <th>Round {result.round}</th>
-      })
+    const removeScore = (id) => {
+        const temp = scores.map(s => s)
+        const indexToDel = temp.map(s => s._id).indexOf(id);
+        console.log(indexToDel);
 
-      const resultRows = scores?.map((score) => {
-          const playerCell = <td>{score.name}</td>
-          const resultCells = score.results.map((result) => {
-              return <td>{result.winner ? "won" : "lost"}</td>
+        temp.splice(indexToDel, 1)
+        setScores(temp)
+    }
+  
+    const handleDelete = (id) => { 
+        deleteResult(id).then(() => {
+            removeScore(id)
+        })
+    }
+
+    const headerRow = scores[0]?.results.map((result) => {
+        return <th>Round {result.round}</th>
+    })
+
+    const resultRows = scores?.map((score) => {
+      const playerCell = <td>{score.name}</td>
+      const resultCells = score.results.map((result) => {
+          return <td>{result.winner ? "won" : "lost"}</td>
           })
-          return (
-              <tr>{playerCell}{resultCells}</tr>
-          )
-      })
+        return (
+            <tr>{playerCell}{resultCells}<button onClick={() => handleDelete(score._id)}> Delete Score</button> </tr> 
+        )
+    })
 
-      {/* <button 
-      // onClick={handleDelete}
-      > Delete Score</button> */}
 
     return (
         <div>
@@ -41,8 +48,10 @@ const Scores = ({getResults}) => {
                 <tr>
                     <th>Player</th>
                     {headerRow}
+                    
                 </tr>
                 {resultRows}
+                
             </table>
         </div>
     )

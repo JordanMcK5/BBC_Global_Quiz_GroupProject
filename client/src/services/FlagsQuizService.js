@@ -13,7 +13,7 @@ export const postResults = (payload) => {
 }
 
 export const deleteResult = (id) => {
-    return fetch('http://localhost:5000/api/countries/quiz-results/flags' + id, {
+    return fetch('http://localhost:5000/api/countries/quiz-results/flags/' + id, {
         method: 'DELETE'
     })
 };
