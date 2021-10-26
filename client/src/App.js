@@ -20,12 +20,12 @@ function App() {
         <>
         <NavBar />
         <Switch> 
-        <Route path="/quiz/capitals/scores" render={() => <Scores getResults={getResultsCapitals}/>} />
-        <Route path="/quiz/capitals" render={() => <QuizContainer postResults={postResultsCapitals} QuestionComponent={CapitalsQuizQuestion} />} />
-        <Route path="/quiz/flags/scores" render={() => <Scores getResults={getResultsFlags}/>} />
-        <Route path="/quiz/flags" render={() => <QuizContainer postResults={postResultsFlags} QuestionComponent={FlagsQuizQuestion} />} />
-        <Route path="/quiz/national-animals" component={ReactQuizContainer} /> 
-        <Route path="/quiz/" component={QuizContainer} />
+        <Route exact path="/quiz/capitals/scores" render={() => <Scores getResults={getResultsCapitals}/>} />
+        <Route exact path="/quiz/capitals" render={() => <QuizContainer postResults={postResultsCapitals} QuestionComponent={CapitalsQuizQuestion} />} />
+        <Route exact path="/quiz/flags/scores" render={() => <Scores getResults={getResultsFlags}/>} />
+        <Route exact path="/quiz/flags" render={() => <QuizContainer postResults={postResultsFlags} QuestionComponent={FlagsQuizQuestion} />} />
+        <Route exact path="/quiz/national-animals" component={ReactQuizContainer} /> 
+        <Route exact path="/quiz/" component={QuizContainer} />
         <WorldContainer />
         
         </Switch>
