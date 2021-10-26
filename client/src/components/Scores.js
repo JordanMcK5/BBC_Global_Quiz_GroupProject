@@ -12,6 +12,21 @@ const Scores = ({getResults, deleteResult}) => {
       },[getResults]);
  
 
+    const removeScore = (id) => {
+        const temp = scores.map(s => s)
+        const indexToDel = temp.map(s => s._id).indexOf(id);
+        console.log(indexToDel);
+
+        temp.splice(indexToDel, 1)
+        setScores(temp)
+    }
+  
+    const handleDelete = (id) => { 
+        deleteResult(id).then(() => {
+            removeScore(id)
+        })
+    }
+
     const headerRow = scores[0]?.results.map((result) => {
         return <th>Round {result.round}</th>
     })
@@ -22,26 +37,11 @@ const Scores = ({getResults, deleteResult}) => {
           return <td>{result.winner ? "won" : "lost"}</td>
           })
         return (
-          <tr>{playerCell}{resultCells}</tr>
+            <tr>{playerCell}{resultCells}<button onClick={() => handleDelete(score._id)}> Delete Score</button> </tr> 
         )
-      })
+    })
 
-      const removeScore = (id) => {
-          console.log("id", id);
-          const temp = scores.map(s => s)
-          const indexToDel = temp.map(s => s._id).indexOf(id);
-          console.log(indexToDel);
-  
-          temp.splice(indexToDel, 1)
-          setScores(temp)
-      }
 
-    const handleDelete = () => { 
-        deleteResult(scores.results).then(() => {
-            removeScore(scores.results)
-        })
-    }
-    
     return (
         <div>
             <table> 
@@ -51,7 +51,7 @@ const Scores = ({getResults, deleteResult}) => {
                     
                 </tr>
                 {resultRows}
-                <button onClick={handleDelete}> Delete Score</button> 
+                
             </table>
         </div>
     )
