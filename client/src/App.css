@@ -39,6 +39,38 @@ body {
   text-align: center;
   color: azure;}
 
+  button{
+    background-color: #ffdf59;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+  }
+  
+  button:hover {opacity: 1}
+
+.country_homepage_dropdown{
+background-color: #ffdf59;
+text-align: center;
+font-family: 'Rubik', sans-serif;
+padding: 16px 32px;
+display: inline-block;
+font-size: 20px;
+}
+
+.main_logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* .App {
   margin-top: 10vh;
   text-align: center;
