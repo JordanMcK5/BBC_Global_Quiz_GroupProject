@@ -10,7 +10,10 @@ import CapitalsQuizQuestion from "./components/CapitalsQuizQuestion"
 import { postResults as postResultsFlags } from "./services/FlagsQuizService";
 import { postResults as postResultsCapitals } from "./services/CapitalsQuizService";
 import { getResults as getResultsCapitals } from "./services/CapitalsQuizService";
-import { getResults as getResultsFlags } from "./services/FlagsQuizService";
+import { getResults as getResultsFlags,  } from "./services/FlagsQuizService";
+import { deleteResult as deleteResultFlags } from "./services/FlagsQuizService"
+import { deleteResult as deleteResultCapitals } from "./services/CapitalsQuizService"
+
 
 function App() {
   return (
@@ -20,9 +23,9 @@ function App() {
         <>
         <NavBar />
         <Switch> 
-        <Route exact path="/quiz/capitals/scores" render={() => <Scores getResults={getResultsCapitals}/>} />
+        <Route exact path="/quiz/capitals/scores" render={() => <Scores getResults={getResultsCapitals} deleteResult={deleteResultCapitals}/>} />
         <Route exact path="/quiz/capitals" render={() => <QuizContainer postResults={postResultsCapitals} QuestionComponent={CapitalsQuizQuestion} />} />
-        <Route exact path="/quiz/flags/scores" render={() => <Scores getResults={getResultsFlags}/>} />
+        <Route exact path="/quiz/flags/scores" render={() => <Scores getResults={getResultsFlags}/>} deleteResult={deleteResultFlags}/>
         <Route exact path="/quiz/flags" render={() => <QuizContainer postResults={postResultsFlags} QuestionComponent={FlagsQuizQuestion} />} />
         <Route exact path="/quiz/national-animals" component={ReactQuizContainer} /> 
         <Route exact path="/quiz/" component={QuizContainer} />
