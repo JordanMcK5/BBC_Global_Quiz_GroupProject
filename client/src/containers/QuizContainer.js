@@ -84,6 +84,7 @@ const QuizQuestionContainer = ({QuestionComponent, postResults}) => {
         setCountryIndex(countryIndex + 1)
     }
 
+    console.log(results);
     const endQuiz = () => {
         setQuizEnded(true)
     }
