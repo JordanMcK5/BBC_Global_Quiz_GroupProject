@@ -32,7 +32,6 @@ function App() {
         <Route exact path="/quiz/capitals" render={() => <QuizContainer key="quiz-capitals" postResults={postResultsCapitals} QuestionComponent={CapitalsQuizQuestion} />} />
         <Route exact path="/quiz/flags/scores" render={() => <Scores key="flags-scores" getResults={getResultsFlags} deleteResult={deleteResultFlags} />}/>
         <Route exact path="/quiz/flags" render={() => <QuizContainer key="quiz-flags" postResults={postResultsFlags} QuestionComponent={FlagsQuizQuestion} />} />
-        <Route exact path="/quiz/" component={QuizContainer} />
         <WorldContainer />
         <Route component={ErrorPage}/>
         </Switch>
