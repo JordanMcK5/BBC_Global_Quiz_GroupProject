@@ -7,15 +7,7 @@ const Country = ({ countries }) => {
     }
 
     var countryName = window.location.href.replace("http://localhost:3000/country/?detail=", "")
-    var countryNameWithSpaces = countryName.replace("%20", " ")
-    var countryNameWithSpaces2 = countryNameWithSpaces.replace("%20", " ")
-    var countryNameWithSpaces3 = countryNameWithSpaces2.replace("%20", " ")
-    var countryNameWithSpaces4 = countryNameWithSpaces3.replace("%20", " ")
-    var countryNameWithSpaces5 = countryNameWithSpaces4.replace("%20", " ")
-    var countryNameWithSpaces6 = countryNameWithSpaces5.replace("%20", " ")
-    var countryNameWithSpaces7 = countryNameWithSpaces6.replace("%20", " ")
-    var countryNameWithSpaces8 = countryNameWithSpaces7.replace("%20", " ")
-    const countryFinal = countryNameWithSpaces8.replace("%20", " ")
+    var countryFinal = countryName.replaceAll("%20", " ")
 
     const countryFind = function (countryList, fixedName) {
         for (var country of countryList) {
