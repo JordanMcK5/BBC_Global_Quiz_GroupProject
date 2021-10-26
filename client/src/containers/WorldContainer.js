@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react'
 import WorldMap from '../components/WorldMap'
 import CountrySelector from '../components/CountrySelector'
 import CountryDetail from '../components/CountryDetail'
-<<<<<<< HEAD
 import { Route } from "react-router-dom";
-=======
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
->>>>>>> 7b1ea8d3c5c4c2948c942d6bfb79e696e21505d2
 import Country from '../components/Country'
 
 const WorldContainer = () => {
@@ -43,12 +39,7 @@ const WorldContainer = () => {
             <CountrySelector countries={countries} onCountrySelected={onCountrySelected} />
             <Route exact path ="/map" component={()=>(<WorldMap countries={countries}/>)} />
             {selectedCountry ? <CountryDetail selectedCountry={selectedCountry} /> : null}
-<<<<<<< HEAD
-            <Route path="/country" component={() => (<Country countries={countries} />)} />
-
-=======
             <Route exact path="/country" component={() => (<Country countries={countries} />)} />
->>>>>>> 7b1ea8d3c5c4c2948c942d6bfb79e696e21505d2
         </>
 
 
