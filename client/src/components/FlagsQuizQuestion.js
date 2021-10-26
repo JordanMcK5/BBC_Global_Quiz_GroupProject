@@ -17,7 +17,7 @@ const FlagsQuizQuestion = ({currentCountry, answers, receiveAnswer }) => {
     return (
         <div>
                     <img className="flag_logo" height="250" src={`${process.env.PUBLIC_URL}/flag.png`}  />
-            <p className="capital1">What is the flag of {currentCountry}?</p>
+            <p className="flag1">What is the flag of {currentCountry}?</p>
             <div id="answers">
                 {quizAnswers}
             </div>
