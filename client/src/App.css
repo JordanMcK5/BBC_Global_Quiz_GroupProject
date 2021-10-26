@@ -31,7 +31,8 @@ li a {
 }
 
 li a:hover {
-background-color:#ffdf59
+background-color:#ffdf59;
+color: #012231
 ;
 }
 
@@ -92,16 +93,14 @@ font-size: 20px;
   padding-left: 30px;
 }
 .capitals_logo{
-  justify-content: center;
-  margin-right:1000px;
-  margin-top: 20px;
+  display: flexbox;
 }
 .capital1{
   display: flexbox;
   color: #ffdf59;
   font-size: 30px;
   font-weight: bolder;
-  margin-top: -50px;
+  margin-top: 50px;
 }
 .capital2{
   font-size: 30px;
@@ -127,6 +126,26 @@ font-size: 20px;
   color: #ffdf59;
   font-size: 30px;
   font-weight: bolder;
+  margin-top: 50px;
+}
+
+table, th, tr{
+  background-color:#ffdf59;
+  color:#012231;
+  text-align: center;
+  border: 1px solid black;
+}
+
+table, td, tr {
+  border: 1px solid black;
+  background-color: aliceblue;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 50px;
 }
 /* .App {

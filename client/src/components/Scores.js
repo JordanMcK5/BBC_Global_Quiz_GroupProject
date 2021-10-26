@@ -44,7 +44,7 @@ const Scores = ({getResults, deleteResult}) => {
 
     return (
         <div>
-            <table> 
+            <table className="table"> 
                 <tr>
                     <th>Player</th>
                     {headerRow}
