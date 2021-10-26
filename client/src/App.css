@@ -57,7 +57,7 @@ body {
     background-color: #ffdf59;
     border: none;
     color: black;
-    padding: 16px 32px;
+    padding: 8px 22px;
     text-align: center;
     font-size: 16px;
     margin: 4px 2px;
@@ -117,3 +117,56 @@ font-size: 20px;
   margin-left: 12vw;
   margin-right: 12vw;
 } */
+
+/*  */
+/* ATHINA's CSS */
+/*  */
+
+#results-list {
+  margin: 40px;
+  font-size: x-large;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.results-entry {
+  float: none;
+  display: flex;
+  /* flex-direction: row;
+  justify-content: space-between; */
+}
+
+.result-won {
+  color: #A0D13D;
+  text-align: left
+}
+
+.result-lost {
+  color: #d1603d;
+  text-align: left
+}
+
+.results-round {
+  text-align: right;
+  padding-right: 20px;
+}
+
+#name-tag {
+  font-size: x-large;
+}
+
+#Name {
+  font-size: x-large;
+}
+
+#name-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#name-form > * {
+  margin: 5px 0;
+}

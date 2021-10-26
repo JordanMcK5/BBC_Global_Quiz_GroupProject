@@ -8,12 +8,12 @@ const Results = ({ results, postResults }) => {
     const resultEntries = results.map((result) => {
         let resultString 
         if (result.winner) {
-            resultString = "won"
+            resultString = "Won"
         }
         else {
-            resultString = "lost"
+            resultString = "Lost"
         }
-        return <li>{result.round} - {resultString}</li>
+        return <tr><td class="results-round">Round {result.round}:</td><td class={result.winner ? "result-won" : "result-lost"}>{resultString}</td></tr>
     })
 
     const onChange = (event) => {
@@ -34,12 +34,14 @@ const Results = ({ results, postResults }) => {
 
     return (
         <div>
-            <form onSubmit={onSubmit}>
-                <label>Name:</label>
+            <form id="name-form" onSubmit={onSubmit}>
+                <label id="name-tag">Name</label>
                 <input onChange={onChange} type="text" id="Name"/>
                 <button type="submit" value="Save" id="save">Submit</button>
             </form>
-            <ul>{resultEntries} </ul>
+            <table id="results-list">
+                {resultEntries}
+            </table>
         </div>
     )
 }
