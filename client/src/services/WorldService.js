@@ -1,4 +1,5 @@
-const baseURL = 'http://localhost:5000/api/countries/';
+const baseURL = 'https://restcountries.com/v2/all';
+// const baseURL = 'http://localhost:5000/api/countries/'; Make sure to check this isn't needed
 
 const WorldService =  {
   getData() {
