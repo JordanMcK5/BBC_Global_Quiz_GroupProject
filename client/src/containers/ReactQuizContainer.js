@@ -130,7 +130,7 @@ const ReactQuizContainer = ({postResults}) => {
                 styleFunction={stylingFunction}
             />
             <h2>{question}</h2>
-            <h2>{answer} <span id="aButtonFeel" onClick={onClick}>{button}</span></h2>
+            <h2>{answer} <span className="aButtonFeel" onClick={onClick}>{button}</span></h2>
             <h2>{viewResults}</h2>
             {endOfQuiz()}
             </div>
