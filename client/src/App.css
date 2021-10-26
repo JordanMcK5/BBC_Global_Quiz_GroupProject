@@ -53,23 +53,23 @@ body {
 
 } */
 
-  button{
-    background-color: #ffdf59;
-    border: none;
-    color: black;
-    padding: 8px 22px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.8;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-    font-family: 'Rubik', sans-serif;
-  }
+button{
+  background-color: #ffdf59;
+  border: none;    
+  color: black;
+  padding: 8px 22px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.8;
+  transition: 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Rubik', sans-serif;
+}
   
-  button:hover {opacity: 1}
+button:hover {opacity: 1}
 
 .country_homepage_dropdown{
 background-color: #ffdf59;
@@ -89,7 +89,16 @@ font-size: 20px;
 .flag-quiz-images{
   height: 200px;
   width: 300px;
-  padding-left: 30px;
+  margin-left: 30px;
+}
+
+/* Added hover and cursor */
+.flag-quiz-images:hover {
+  cursor: pointer;
+  outline-style: solid;
+  outline-color: #ffdf59;
+  outline-width: 2px;
+  box-sizing: border-box;
 }
 
 .capital1{
@@ -101,14 +110,23 @@ font-size: 20px;
   font-size: x-large;
   background-color: white;
   color:#012231;
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: auto;   /* changed margin left and right */
+  margin-right: auto;
   display: block;
   padding: 14px 16px;
   text-decoration: none;
+
+  width: 400px;   /* added width */
+  cursor: pointer; /* added cursor */
 }
 
-.capital2:hover {opacity: 2}
+/* added hover for capital choice */
+.capital2 > div:hover {
+  background-color: #012231;
+  color: white;
+  transition: 0.2s;
+}
+
 /* .App {
   margin-top: 10vh;
   text-align: center;
