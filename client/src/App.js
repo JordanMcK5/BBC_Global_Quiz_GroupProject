@@ -28,10 +28,10 @@ function App() {
         <Switch> 
         <Route exact path="/quiz/national-animals/scores" render={() => <Scores getResults={getResultsNationalAnimals}/>} />
         <Route exact path="/quiz/national-animals" render={() => <ReactQuizContainer postResults={postResultsNationalAnimals}/>} />
-        <Route exact path="/quiz/capitals/scores" render={() => <Scores getResults={getResultsCapitals} deleteResult={deleteResultCapitals}/>} />
-        <Route exact path="/quiz/capitals" render={() => <QuizContainer postResults={postResultsCapitals} QuestionComponent={CapitalsQuizQuestion} />} />
-        <Route exact path="/quiz/flags/scores" render={() => <Scores getResults={getResultsFlags} deleteResult={deleteResultFlags} />}/>
-        <Route exact path="/quiz/flags" render={() => <QuizContainer postResults={postResultsFlags} QuestionComponent={FlagsQuizQuestion} />} />
+        <Route exact path="/quiz/capitals/scores" render={() => <Scores key="capitals-scores" getResults={getResultsCapitals} deleteResult={deleteResultCapitals}/>} />
+        <Route exact path="/quiz/capitals" render={() => <QuizContainer key="quiz-capitals" postResults={postResultsCapitals} QuestionComponent={CapitalsQuizQuestion} />} />
+        <Route exact path="/quiz/flags/scores" render={() => <Scores key="flags-scores" getResults={getResultsFlags} deleteResult={deleteResultFlags} />}/>
+        <Route exact path="/quiz/flags" render={() => <QuizContainer key="quiz-flags" postResults={postResultsFlags} QuestionComponent={FlagsQuizQuestion} />} />
         <Route exact path="/quiz/" component={QuizContainer} />
         <WorldContainer />
         <Route component={ErrorPage}/>
