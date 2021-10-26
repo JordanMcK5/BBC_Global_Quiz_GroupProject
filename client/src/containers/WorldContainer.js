@@ -8,7 +8,6 @@ import Country from '../components/Country'
 const WorldContainer = () => {
     const [countries, setCountries] = useState([])
     const [selectedCountry, setSelectedCountry] = useState(null)
-    const [countriesForMap, setCountriesForMap] = useState([])
 
     const fetchAllCountries = function () {
         fetch('https://restcountries.com/v2/all')
@@ -18,16 +17,6 @@ const WorldContainer = () => {
 
     useEffect(() => {
         fetchAllCountries()
-    }, [])
-
-    const fetchAllCountriesForMap = () => {
-        fetch("https://restcountries.com/v3.1/all")
-            .then(response => response.json())
-            .then(data => setCountriesForMap(data))
-    }
-
-    useEffect(() => {
-        fetchAllCountriesForMap()
     }, [])
 
     const onCountrySelected = function (country) {
