@@ -13,7 +13,7 @@ export const postResults = (payload) => {
 }
 
 export const deleteResult = (id) => {
-    return fetch('http://localhost:5000/api/countries/quiz-results/capitals' + id, {
+    return fetch('http://localhost:5000/api/countries/quiz-results/capitals/' + id, {
         method: 'DELETE'
     })
 };

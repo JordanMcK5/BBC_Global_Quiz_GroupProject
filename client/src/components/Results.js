@@ -27,7 +27,6 @@ const Results = ({ results, postResults }) => {
             name: name,
             results: results
         }
-        
         postResults(newResult)
         .then(() => history.push(`${history.location.pathname}/scores`))
     }

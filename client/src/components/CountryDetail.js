@@ -13,7 +13,6 @@ const CountryDetail = ({selectedCountry}) => {
     return(
         <div>
             <h3>{selectedCountry.name}</h3>
-            <img src={selectedCountry.flag} alt="flag" width="200" height="150"></img>
             <p>Capital: {selectedCountry.capital}</p>
             <p>Languages: {languagesSpoken}</p>
             <p>Population: {selectedCountry.population}</p>

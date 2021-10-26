@@ -29,6 +29,9 @@ const NavBar = () => {
                 <Link to="/quiz/capitals/scores">Capitals Scores</Link>
             </li>
             {/* <img className="bbc_logo" height="30" src={`${process.env.PUBLIC_URL}/bbc.jpeg`}  /> */}
+            <li>
+                <Link to="/quiz/national-animals/scores">National Animals Scores</Link>
+            </li>
         </ul>
         </div>
     );
