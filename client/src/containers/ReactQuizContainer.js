@@ -123,8 +123,13 @@ const ReactQuizContainer = ({postResults}) => {
             <div className="App">
             <img className="animal_image" height="250" src={`${process.env.PUBLIC_URL}/animals.png`}  />
             <h1>National Animals Quiz</h1>
+            <h2>{question}</h2>
+            <h2>{answer} <span className="aButtonFeel" onClick={onClick}>{button}</span></h2>
+            <h2>{viewResults}</h2>
+            {endOfQuiz()}
             <WorldMap
                 className="Map"
+                backgroundColor="transparent"
                 color="green"
                 data={countryItems}
                 onClickFunction={clickAction}
@@ -132,10 +137,6 @@ const ReactQuizContainer = ({postResults}) => {
                 richInteraction
                 styleFunction={stylingFunction}
             />
-            <h2>{question}</h2>
-            <h2>{answer} <span className="aButtonFeel" onClick={onClick}>{button}</span></h2>
-            <h2>{viewResults}</h2>
-            {endOfQuiz()}
             </div>
      )
 }

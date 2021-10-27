@@ -31,7 +31,8 @@ li a {
 }
 
 li a:hover {
-background-color:#ffdf59
+background-color:#ffdf59;
+color: #012231
 ;
 }
 
@@ -100,11 +101,15 @@ font-size: 20px;
   outline-width: 2px;
   box-sizing: border-box;
 }
-
+.capitals_logo{
+  display: flexbox;
+}
 .capital1{
+  display: flexbox;
   color: #ffdf59;
-  font-size: x-large;
+  font-size: 30px;
   font-weight: bolder;
+  margin-top: 50px;
 }
 .capital2{
   font-size: x-large;
