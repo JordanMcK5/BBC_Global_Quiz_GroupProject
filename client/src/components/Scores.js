@@ -15,7 +15,6 @@ const Scores = ({getResults, deleteResult}) => {
     const removeScore = (id) => {
         const temp = scores.map(s => s)
         const indexToDel = temp.map(s => s._id).indexOf(id);
-        console.log(indexToDel);
 
         temp.splice(indexToDel, 1)
         setScores(temp)
