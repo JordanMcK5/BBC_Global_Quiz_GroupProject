@@ -14,7 +14,7 @@ ul {
   margin-top: -10px;
   padding: 0;
   overflow: hidden;
-  background-color:#012231
+  background-color:#012231;
 }
 
 li{
@@ -43,15 +43,6 @@ body {
   text-align: center;
   color: azure;
 }
-
-
-/* .aButtonFeel {
-
-}
-
-.aButtonFeel {
-
-} */
 
   button{
     background-color: #ffdf59;
@@ -117,3 +108,26 @@ font-size: 20px;
   margin-left: 12vw;
   margin-right: 12vw;
 } */
+
+
+.map-app {
+  margin-left: 14vw;
+  margin-right: 14vw;
+  margin-bottom: 30vh;
+  color: #ffdf59;
+  font-size: large;
+}
+
+.a-button-feel {
+  color: #e92a08;
+  font-size: 30px;
+  cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.a-button-feel:hover {opacity: 7}
+
+
+
+
