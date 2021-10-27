@@ -11,7 +11,6 @@ const Country = ({ countries }) => {
     var countryFinal2 = countryFinal.replaceAll("%C3%A7", "ç")
     var countryFinal3 = countryFinal2.replaceAll("%C3%85", "Å")
     var countryFinal4 = countryFinal3.replaceAll("%C3%A9", "é")
-    
 
     const countryFind = function (countryList, fixedName) {
         console.log(fixedName);
