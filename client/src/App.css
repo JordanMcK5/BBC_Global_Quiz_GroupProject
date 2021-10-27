@@ -31,7 +31,8 @@ li a {
 }
 
 li a:hover {
-background-color:#ffdf59
+background-color:#ffdf59;
+color: #012231
 ;
 }
 
@@ -44,23 +45,23 @@ body {
   color: azure;
 }
 
-  button{
-    background-color: #ffdf59;
-    border: none;
-    color: black;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.8;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-    font-family: 'Rubik', sans-serif;
-  }
+button{
+  background-color: #ffdf59;
+  border: none;    
+  color: black;
+  padding: 8px 22px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.8;
+  transition: 0.2s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Rubik', sans-serif;
+}
   
-  button:hover {opacity: 1}
+button:hover {opacity: 1}
 
 .country_homepage_dropdown{
 background-color: #ffdf59;
@@ -80,26 +81,48 @@ font-size: 20px;
 .flag-quiz-images{
   height: 200px;
   width: 300px;
-  padding-left: 30px;
+  margin-left: 30px;
 }
 
+/* Added hover and cursor */
+.flag-quiz-images:hover {
+  cursor: pointer;
+  outline-style: solid;
+  outline-color: #ffdf59;
+  outline-width: 2px;
+  box-sizing: border-box;
+}
+.capitals_logo{
+  display: flexbox;
+}
 .capital1{
+  display: flexbox;
   color: #ffdf59;
-  font-size: x-large;
+  font-size: 30px;
   font-weight: bolder;
+  margin-top: 50px;
 }
 .capital2{
   font-size: x-large;
   background-color: white;
   color:#012231;
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: auto;   /* changed margin left and right */
+  margin-right: auto;
   display: block;
   padding: 14px 16px;
   text-decoration: none;
+
+  width: 400px;   /* added width */
+  cursor: pointer; /* added cursor */
 }
 
-.capital2:hover {opacity: 2}
+/* added hover for capital choice */
+.capital2 > div:hover {
+  background-color: #012231;
+  color: white;
+  transition: 0.2s;
+}
+
 /* .App {
   margin-top: 10vh;
   text-align: center;
@@ -129,5 +152,67 @@ font-size: 20px;
 .a-button-feel:hover {opacity: 7}
 
 
+/*  */
+/* ATHINA's CSS */
+/*  */
 
+#results-list {
+  margin: 40px;
+  font-size: x-large;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.results-entry {
+  float: none;
+  display: flex;
+  /* flex-direction: row;
+  justify-content: space-between; */
+}
+
+.results-outcome {
+  text-align: left
+}
+
+.won {
+  color: #A0D13D;
+}
+
+.lost {
+  color: #d1603d;
+}
+
+.results-round {
+  text-align: right;
+  padding-right: 20px;
+}
+
+#name-tag {
+  font-size: x-large;
+}
+
+#Name {
+  font-size: x-large;
+}
+
+#name-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#name-form > * {
+  margin: 5px 0;
+}
+
+#scores-table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+#scores-table td {
+  padding: 0 10px;
+}

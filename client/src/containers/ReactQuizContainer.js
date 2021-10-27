@@ -128,6 +128,7 @@ const ReactQuizContainer = ({postResults}) => {
             
             <WorldMap
                 className="Map"
+                backgroundColor="transparent"
                 color="green"
                 data={countryItems}
                 onClickFunction={clickAction}

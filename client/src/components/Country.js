@@ -37,10 +37,10 @@ const Country = ({ countries }) => {
 
     return (
         <>
-            <p>{countryDetails.name}</p>
-            <p>{countryDetails.population}</p>
-            <p>{currencies}</p>
-            <p>{languagesSpoken}</p>
+            <p>Country Name: {countryDetails.name}</p>
+            <p>Population: {countryDetails.population} </p>
+            <p>currency: {currencies}</p>
+            <p>Languages Spoken: {languagesSpoken}</p>
             <img src={countryDetails.flag} alt=""/>
         </>
     )
