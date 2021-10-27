@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CountrySelector from '../components/CountrySelector'
 import CountryDetail from '../components/CountryDetail'
-import { Route } from "react-router-dom";
-
 
 const WorldContainer = () => {
     const [countries, setCountries] = useState([])
