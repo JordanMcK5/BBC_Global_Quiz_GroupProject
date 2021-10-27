@@ -13,7 +13,6 @@ const Country = ({ countries }) => {
     var countryFinal4 = countryFinal3.replaceAll("%C3%A9", "é")
 
     const countryFind = function (countryList, fixedName) {
-        console.log(fixedName);
         for (var country of countryList) {
             if (country.name === fixedName) {       
                 return country
