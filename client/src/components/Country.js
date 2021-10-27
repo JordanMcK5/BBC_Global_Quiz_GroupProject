@@ -27,6 +27,7 @@ const Country = ({ countries }) => {
         return currency.name
     }).join(", ")
 
+
     return (
         <>
             <p>{countryDetails.name}</p>
