@@ -84,7 +84,6 @@ font-size: 20px;
   margin-left: 30px;
 }
 
-/* Added hover and cursor */
 .flag-quiz-images:hover {
   cursor: pointer;
   outline-style: solid;
@@ -106,17 +105,16 @@ font-size: 20px;
   font-size: x-large;
   background-color: white;
   color:#012231;
-  margin-left: auto;   /* changed margin left and right */
+  margin-left: auto;   
   margin-right: auto;
   display: block;
   padding: 14px 16px;
   text-decoration: none;
 
-  width: 400px;   /* added width */
-  cursor: pointer; /* added cursor */
+  width: 400px;   
+  cursor: pointer; 
 }
 
-/* added hover for capital choice */
 .capital2 > div:hover {
   background-color: #012231;
   color: white;
@@ -141,11 +139,6 @@ font-size: 20px;
 
 .a-button-feel:hover {opacity: 7}
 
-
-/*  */
-/* ATHINA's CSS */
-/*  */
-
 #results-list {
   margin: 40px;
   font-size: x-large;
@@ -157,8 +150,6 @@ font-size: 20px;
 .results-entry {
   float: none;
   display: flex;
-  /* flex-direction: row;
-  justify-content: space-between; */
 }
 
 .results-outcome {
