@@ -49,7 +49,7 @@ const ReactQuizContainer = ({postResults}) => {
             ? 0.1 + (1.5 * (countryValue - minValue)) / (maxValue - minValue)
             : 0;
         return {
-            fill: countryCode === countryCode ? '#2b7840' : color,
+            fill: countryCode === countryCode ? '#60ba8f' : color,
             stroke: 'yellow',
             strokeWidth: 2,
             strokeOpacity: 0.2,
@@ -122,8 +122,11 @@ const ReactQuizContainer = ({postResults}) => {
             <div className="map-app">
             <img className="animal_image" height="250" src={`${process.env.PUBLIC_URL}/animals.png`}  />
             <h1>National Animals Quiz</h1>
+            <h2>{question}</h2>
+            <h2>{answer} <span className="a-button-feel" onClick={onClick}>{button}</span></h2>
             <h2>{viewResults}</h2>
             {endOfQuiz()}
+
             <div className="map-container">
             
             <WorldMap
@@ -135,8 +138,7 @@ const ReactQuizContainer = ({postResults}) => {
                 size='responsive'
                 styleFunction={stylingFunction}
             />
-             <h2>{question}</h2>
-            <h2>{answer} <span className="a-button-feel" onClick={onClick}>{button}</span></h2>
+         
             </div>
             </div> 
      )
