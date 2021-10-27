@@ -197,3 +197,7 @@ font-size: 20px;
 #scores-table td {
   padding: 0 10px;
 }
+
+.flags{
+  max-height: 20px;
+}

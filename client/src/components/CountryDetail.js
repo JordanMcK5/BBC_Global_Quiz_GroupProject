@@ -18,7 +18,7 @@ const CountryDetail = ({selectedCountry}) => {
             <p>Language: {languagesSpoken}</p>
             <p>Population: {selectedCountry.population}</p>
             <p>Currencies: {currencies}</p>
-            <img src={selectedCountry.flag} alt=""/>
+            <img height="200" width="400" src={selectedCountry.flag} alt=""/>
 
         </div>
     )
