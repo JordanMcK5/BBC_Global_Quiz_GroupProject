@@ -28,13 +28,13 @@ const Scores = ({getResults, deleteResult}) => {
     }
 
     const headerRow = scores[0]?.results.map((result) => {
-        return <th>Round {result.round}</th>
+        return <th>{result.round}</th>
     })
 
     const resultRows = scores?.map((score) => {
       const playerCell = <td>{score.name}</td>
       const resultCells = score.results.map((result) => {
-          return <td>{result.winner ? "won" : "lost"}</td>
+          return <td class={result.winner ? "won" : "lost"}>{result.winner ? "Won" : "Lost"}</td>
           })
         return (
             <tr>{playerCell}{resultCells}<button onClick={() => handleDelete(score._id)}> Delete Score</button> </tr> 
@@ -44,7 +44,7 @@ const Scores = ({getResults, deleteResult}) => {
 
     return (
         <div>
-            <table> 
+            <table id="scores-table"> 
                 <tr>
                     <th>Player</th>
                     {headerRow}

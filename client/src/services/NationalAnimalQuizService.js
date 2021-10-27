@@ -12,8 +12,8 @@ export const postResults = (payload) => {
  .then(res => res.json())
 }
 
-// export const deleteBooking = (id) => {
-//     return fetch('http://localhost:5000/api/countries/quiz-results/flags' + id, {
-//         method: 'DELETE'
-//     })
-// };
+export const deleteResult = (id) => {
+    return fetch('http://localhost:5000/api/countries/quiz-results/national-animals/' + id, {
+        method: 'DELETE'
+    })
+};

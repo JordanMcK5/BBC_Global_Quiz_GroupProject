@@ -17,6 +17,7 @@ import ErrorPage from "./components/ErrorPage"
 import { deleteResult as deleteResultFlags } from "./services/FlagsQuizService"
 import { deleteResult as deleteResultCapitals } from "./services/CapitalsQuizService"
 import MapContainer from './containers/MapContainer';
+import { deleteResult as deleteResultNationalAnimals } from "./services/NationalAnimalQuizService"
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
         <>
           <NavBar />
           <Switch>
-            <Route exact path="/quiz/national-animals/scores" render={() => <Scores getResults={getResultsNationalAnimals} />} />
+            <Route exact path="/quiz/national-animals/scores" render={() => <Scores getResults={getResultsNationalAnimals} deleteResult={deleteResultNationalAnimals} />} />
             <Route exact path="/quiz/national-animals" render={() => <ReactQuizContainer postResults={postResultsNationalAnimals} />} />
             <Route exact path="/quiz/capitals/scores" render={() => <Scores key="capitals-scores" getResults={getResultsCapitals} deleteResult={deleteResultCapitals} />} />
             <Route exact path="/quiz/capitals" render={() => <QuizContainer key={Math.random()} postResults={postResultsCapitals} QuestionComponent={CapitalsQuizQuestion} />} />
